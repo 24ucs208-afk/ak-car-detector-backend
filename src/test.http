@@ -1,0 +1,88 @@
+POST http://localhost:8081/api/users
+Content-Type: application/json
+
+{
+  "name": "Karpaga Valli",
+  "email": "karpaga@example.com",
+  "password": "123456",
+  "phone": "9876543211"
+}
+
+###
+
+PUT http://localhost:8081/api/users/2
+Content-Type: application/json
+
+{
+  "name": "Karpaga Valli Updated",
+  "email": "karpaga.updated@example.com",
+  "password": "654321",
+  "phone": "9876543212"
+}
+
+
+
+###
+
+DELETE http://localhost:8081/api/users/2
+
+###
+
+GET http://localhost:8081/api/claims
+
+###
+
+### Create new insurance claim
+POST http://localhost:8081/api/claims
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "vehicleId": 1,
+  "damageReportId": 1,
+  "claimNumber": "CLM-2026-0002",
+  "status": "Pending",
+  "description": "Rear bumper damage insurance claim"
+}
+
+###
+
+POST http://localhost:8081/api/vehicles
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "vehicleNumber": "TN58AB1234",
+  "brand": "Toyota",
+  "model": "Innova",
+  "manufacturingYear": 2022,
+  "fuelType": "Diesel"
+}
+
+
+
+### Create Notification
+POST http://localhost:8081/api/notifications
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "title": "AI Damage Report Ready",
+  "message": "Your vehicle damage analysis report is ready to view.",
+  "type": "damage_report"
+}
+
+###
+
+### Get User Notifications
+GET http://localhost:8081/api/notifications/user/1
+
+###
+
+### Mark Notification as Read
+PUT http://localhost:8081/api/notifications/1/read
+
+###
+
+### Delete Notification
+DELETE http://localhost:8081/api/notifications/1
