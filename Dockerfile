@@ -1,7 +1,9 @@
 FROM eclipse-temurin:17-jdk
 
 # Install Python
-RUN apt-get update && apt-get install -y python3 python3-venv python3-pip \
+RUN apt-get update && apt-get install -y \
+    python3 python3-venv python3-pip \
+    libxcb1 libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
