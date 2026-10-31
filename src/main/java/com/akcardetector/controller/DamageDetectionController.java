@@ -59,10 +59,10 @@ public class DamageDetectionController {
             image.transferTo(tempImage.toFile());
 
             // 3. Python
-            String python = "python";
+            String python = "/opt/venv/bin/python";
 
             String detectScript =
-                    "C:\\Users\\acer\\Downloads\\ak-car-detector-backend\\ak-car-detector-backend\\detect.py";
+                    "/app/detect.py";
 
             // 4. Run YOLO
             ProcessBuilder processBuilder =
